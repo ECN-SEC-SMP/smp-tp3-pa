@@ -106,38 +106,3 @@ void savePgm(string NomImage, t_Image * Image)
   cout << "sauvegarde terminée." << endl;
 }
 
-void seuillage(int seuil, t_Image * Image){
-  if (Image == nullptr || Image->h <= 0 || Image->w <= 0) {
-    cout << "Erreur: Image non valide." << endl;
-    return;
-  }
-
-  for(int i = 0; i < Image->h; i++){
-    for(int j = 0; j < Image->w; j++){
-      if(Image->im[i][j] > seuil){
-        Image->im[i][j] = 255;
-      } else {
-        Image->im[i][j] = 0;
-      }
-    }
-  }
-  cout << "Seuillage terminé." << endl;
-}
-
-void diff(t_Image * Image1, t_Image * Image2, t_Image * Image3) {
-  if (Image1 == nullptr || Image2 == nullptr || Image3 == nullptr) {
-    cout << "Erreur: Une des images est invalide." << endl;
-    return;
-  }
-  Image3->h = Image1->h;
-  Image3->w = Image1->w;
-
-  for (int i = 0; i < Image1->h; i++) {
-    for (int j = 0; j < Image1->w; j++) {
-      int diff = abs((int)Image1->im[i][j] - (int)Image2->im[i][j]);
-      Image3->im[i][j] = (unsigned char)diff;
-    }
-  }
-  cout << "Différence calculée avec succès." << endl;
-}
-

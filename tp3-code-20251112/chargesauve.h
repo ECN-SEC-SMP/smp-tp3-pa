@@ -34,11 +34,5 @@ dans la variable Image.
 */
 void savePgm(std::string NomImage, t_Image * Image);
 
-void seuillage(int seuil, t_Image * Image);
-
-void diff(t_Image * Image1, t_Image * Image2, t_Image *Image3);
-
-//void dilatation(t_structurant * struc, t_Image * Image);
-
 #endif
 
