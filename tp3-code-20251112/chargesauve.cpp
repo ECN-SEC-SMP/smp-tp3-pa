@@ -13,6 +13,7 @@ qui liront et écriront des fichiers PGM
 using namespace std;
 
 #include "image.h"
+#include "structurant.h"
 #include "chargesauve.h"
 
 
@@ -111,7 +112,7 @@ void seuillage(int seuil, t_Image * Image){
     return;
   }
 
-  for(int i = 3; i < Image->h; i++){
+  for(int i = 0; i < Image->h; i++){
     for(int j = 0; j < Image->w; j++){
       if(Image->im[i][j] > seuil){
         Image->im[i][j] = 255;
@@ -140,10 +141,3 @@ void diff(t_Image * Image1, t_Image * Image2, t_Image * Image3) {
   cout << "Différence calculée avec succès." << endl;
 }
 
-void dilatation(t_Image * struc, t_Image * Image){
-  if (Image == nullptr || Image->h <= 0 || Image->w <= 0) {
-    cout << "Erreur: Image non valide." << endl;
-    return;
-  }
-  
-}
